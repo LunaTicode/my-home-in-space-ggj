@@ -74,6 +74,7 @@ public class Planet : MonoBehaviour
 	}
 
 	[SerializeField] private PlanetView _planetView;
+	[SerializeField] private RectTransform _orbitIndicator;
 
 	public void UpdateResources()
 	{
@@ -97,5 +98,15 @@ public class Planet : MonoBehaviour
 		this._planetView.Display(this);
 
 		this._rotationAxis = Quaternion.Euler(0f, 0f, 90f) * (this.transform.position - this._star.position).normalized;
+
+		if (this._orbitIndicator != null)
+		{
+			this._orbitIndicator.localRotation = Quaternion.LookRotation(this._rotationAxis);
+
+			float bias = 0.25f + Mathf.Lerp(-0.35f, 0.95f, Mathf.Abs(this.transform.position.x) / 8f); // lol :)
+			float value = Mathf.Abs(this.transform.position.x) - bias;
+
+			this._orbitIndicator.localScale = new Vector3(value, value, value);
+		}
 	}
 }
