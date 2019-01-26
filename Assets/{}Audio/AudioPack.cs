@@ -1,6 +1,18 @@
-﻿using System.Collections;
+﻿/* Created by Luna.Ticode */
+
+using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+using TMPro;
 
 [CreateAssetMenu(fileName = "[Audio Pack] name", menuName = "Audio/[Audio Pack]")]
 public class AudioPack : ScriptableObject
