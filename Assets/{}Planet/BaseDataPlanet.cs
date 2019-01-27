@@ -13,7 +13,7 @@ using UnityEditor;
 
 using TMPro;
 
-[CreateAssetMenu(fileName = "[Base Data Planet] name", menuName = "Planet/[Base Data Planet]")]
+[CreateAssetMenu(fileName = "[Base Data Planet] name", menuName = "Celestial Bodies/[Base Data Planet]")]
 public class BaseDataPlanet : ScriptableObject
 {
 	[Min(0f)]

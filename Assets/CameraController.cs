@@ -18,6 +18,9 @@ public class CameraController : MonoBehaviourSingleton<CameraController>
 	[SerializeField] private Camera _camera;
 	public Camera _Camera { get { return this._camera; } }
 
+	[SerializeField] private Transform _target;
+	public Transform _Target { get { return this._target; } }
+
 #if UNITY_EDITOR
 	private void Reset()
 	{

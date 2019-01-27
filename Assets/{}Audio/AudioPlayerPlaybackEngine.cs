@@ -26,6 +26,7 @@ public abstract class AudioPlayerPlaybackEngine<TAudioPlayer> : MonoBehaviour
     [SerializeField] protected float fadeTime = 10f;
     [SerializeField] protected float delayTime = 5f;
     [SerializeField] protected bool playFading = false;
+	[SerializeField] protected bool playOnAwake = false;
 
     public void Play()
     {
@@ -41,7 +42,8 @@ public abstract class AudioPlayerPlaybackEngine<TAudioPlayer> : MonoBehaviour
 
     private void Awake()
     {
-        this.Play();
+		if (this.playOnAwake)
+			this.Play();
     }
 
 #if UNITY_EDITOR

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef7642bec49a41288e77c270f8fc5c3, type: 3}
   m_Name: '[Audio Pack] UI SFX'
   m_EditorClassIdentifier: 
-  _audioClips: []
+  _audioClips:
+  - {fileID: 8300000, guid: 02f69bbe1055e4151b9a7c486009a819, type: 3}

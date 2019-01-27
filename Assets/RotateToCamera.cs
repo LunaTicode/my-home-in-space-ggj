@@ -20,7 +20,7 @@ public class RotateToCamera : MonoBehaviour
 		Vector3 forward = CameraController.Instance_._Camera.transform.position - this.transform.position;
 		//forward.x = 0f;
 
-		this.transform.rotation = Quaternion.LookRotation(forward);
+		this.transform.rotation = Quaternion.LookRotation(-forward);
 	}
 
 #if UNITY_EDITOR

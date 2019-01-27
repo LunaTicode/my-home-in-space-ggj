@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef7642bec49a41288e77c270f8fc5c3, type: 3}
   m_Name: '[Audio Pack] Notification SFX'
   m_EditorClassIdentifier: 
-  _audioClips: []
+  _audioClips:
+  - {fileID: 8300000, guid: b1ecf61364f2f4ae2a7d171d155142b5, type: 3}

@@ -14,7 +14,7 @@ using UnityEditor;
 
 using TMPro;
 
-public class Planet : MonoBehaviour
+public class Planet : CelestialBody
 {
 	[System.Serializable]
 	public class Resources
@@ -49,10 +49,10 @@ public class Planet : MonoBehaviour
 		public float _WaterProduction { get { return this._baseDataPlanet._BaseWaterProduction * this.ScienceLevel_; } }
 	}
 
-	[SerializeField] private DataPlanet _data;
-	public DataPlanet _Data { get { return this._data; } }
+	[SerializeField] private DataPlanet _dataPlanet;
+	public DataPlanet _DataPlanet { get { return this._dataPlanet; } }
 
-	private IPrivateData _privateData { get { return this._data; } }
+	private IPrivateData _privateData { get { return this._dataPlanet; } }
 
 	//
 
@@ -63,7 +63,7 @@ public class Planet : MonoBehaviour
 
 	private void RotateSelf()
 	{
-		this.transform.Rotate(Vector3.up * this._selfRotationSpeed, Space.Self);
+		this.transform.Rotate(-Vector3.up * this._selfRotationSpeed, Space.Self);
 	}
 
 	private Vector3 _rotationAxis;
@@ -78,9 +78,9 @@ public class Planet : MonoBehaviour
 
 	public void UpdateResources()
 	{
-		this._resources.Iron += this._data._IronProduction;
-		this._resources.Oxygen += this._data._OxygenProduction;
-		this._resources.Water += this._data._WaterProduction;
+		this._resources.Iron += this._dataPlanet._IronProduction;
+		this._resources.Oxygen += this._dataPlanet._OxygenProduction;
+		this._resources.Water += this._dataPlanet._WaterProduction;
 
 		this._planetView.UpdateData();
 	}
@@ -103,8 +103,8 @@ public class Planet : MonoBehaviour
 		{
 			this._orbitIndicator.localRotation = Quaternion.LookRotation(this._rotationAxis);
 
-			float bias = 0.25f + Mathf.Lerp(-0.35f, 0.95f, Mathf.Abs(this.transform.position.x) / 8f); // lol :)
-			float value = Mathf.Abs(this.transform.position.x) - bias;
+			//float bias = 0.5f + Mathf.Lerp(-0.25f, 0.7f, Mathf.Abs(this.transform.position.x) / 8f); // lol :)
+			float value = Mathf.Abs(this.transform.localPosition.x); //- bias;
 
 			this._orbitIndicator.localScale = new Vector3(value, value, value);
 		}

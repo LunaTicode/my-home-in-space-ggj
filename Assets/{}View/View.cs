@@ -53,7 +53,6 @@ public class View : MonoBehaviour
 
 	public virtual void Show()
 	{
-		Cursor.visible = true;
 		this.Visible_ = true;
 
 		this._animator.ResetTrigger("Hide");
@@ -62,7 +61,6 @@ public class View : MonoBehaviour
 
 	public virtual void Hide()
 	{
-		Cursor.visible = false;
 		this.Visible_ = false;
 
 		this._animator.ResetTrigger("Show");
