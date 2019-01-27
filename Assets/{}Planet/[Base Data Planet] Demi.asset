@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 108e214160144af4f8ee8ddf0c091c97, type: 3}
-  m_Name: '[Base Data Celestial Body] Demi'
+  m_Script: {fileID: 11500000, guid: accf668fbecb81940bfa620773049fe0, type: 3}
+  m_Name: '[Base Data Planet] Demi'
   m_EditorClassIdentifier: 
-  _name: Demi
-  _description: Demi is a planet believed to be created by Demiurgs.
+  _baseIronProduction: 0.08
+  _baseOxygenProduction: 0.01
+  _baseWaterProduction: 0.03

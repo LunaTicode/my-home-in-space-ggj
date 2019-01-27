@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: accf668fbecb81940bfa620773049fe0, type: 3}
-  m_Name: '[Base Data Planet] Decima'
+  m_Name: '[Base Data Planet] Demi 3'
   m_EditorClassIdentifier: 
-  _baseIronProduction: 0.08
+  _baseIronProduction: 0.01
   _baseOxygenProduction: 0.01
-  _baseWaterProduction: 0.03
+  _baseWaterProduction: 0.09

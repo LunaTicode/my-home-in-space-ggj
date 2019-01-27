@@ -21,6 +21,39 @@ public class CameraController : MonoBehaviourSingleton<CameraController>
 	[SerializeField] private Transform _target;
 	public Transform _Target { get { return this._target; } }
 
+	[SerializeField] private float[] _scrollDistances;
+	private int _scrollDistanceIndex;
+
+	[SerializeField] private float _smoothingSpeed = 3.5f;
+
+	[SerializeField] private Cinemachine.CinemachineVirtualCamera _virtualCamera;
+
+	private Cinemachine.CinemachineFramingTransposer _framingTransposer;
+
+	private void LateUpdate()
+	{
+		float mouseScrollWheelAxis = Input.GetAxisRaw("Mouse ScrollWheel");
+
+		if (Mathf.Abs(mouseScrollWheelAxis) > 0f)
+		{
+			if (mouseScrollWheelAxis < 0f && this._scrollDistanceIndex < this._scrollDistances.Length - 1)
+				this._scrollDistanceIndex++;
+			else if (mouseScrollWheelAxis > 0f && this._scrollDistanceIndex > 0)
+				this._scrollDistanceIndex--;
+		}
+
+		this._framingTransposer.m_CameraDistance = Mathf.Lerp(this._framingTransposer.m_CameraDistance, this._scrollDistances[this._scrollDistanceIndex], this._smoothingSpeed * Time.deltaTime);
+	}
+
+	protected override void Awake()
+	{
+		base.Awake();
+
+		this._framingTransposer = this._virtualCamera.GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>();
+
+		this._scrollDistanceIndex = this._scrollDistances.Length - 1;
+	}
+
 #if UNITY_EDITOR
 	private void Reset()
 	{

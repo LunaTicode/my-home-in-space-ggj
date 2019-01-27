@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 108e214160144af4f8ee8ddf0c091c97, type: 3}
-  m_Name: '[Base Data Celestial Body] Demi'
+  m_Name: '[Base Data Celestial Body] Notio'
   m_EditorClassIdentifier: 
-  _name: Demi
-  _description: Demi is a planet believed to be created by Demiurgs.
+  _name: Notio
+  _description: Frozen boulder of water and some other substances...
